@@ -113,6 +113,11 @@
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
   }
 
+  .active {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
   .card-container .card:not(.highlight-card):hover .material-icons path {
     fill: rgb(105, 103, 103);
   }
