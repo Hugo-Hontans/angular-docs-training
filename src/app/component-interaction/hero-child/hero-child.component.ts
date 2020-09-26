@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-hero-child',
@@ -13,4 +13,18 @@ export class HeroChildComponent {
   }
   private _name = '';
   @Input('master') masterName: string;
+  messages: string[];
+
+  ngOnChanges(changes: SimpleChange[]) {
+    const messages = [];
+    for (const propName in changes) {
+      const changedProp = changes[propName];
+      if (changedProp.isFirstChange()) {
+        messages.push(`Initial value of ${propName} is ${changedProp.currentValue}`);
+      } else {
+        messages.push(`${propName} changed from ${changedProp.previousValue} to ${changedProp.currentValue}`);
+      }
+    }
+    this.messages = messages;
+  }
 }
