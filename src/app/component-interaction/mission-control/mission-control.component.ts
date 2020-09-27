@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MissionService } from '../mission.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mission-control',
@@ -14,9 +15,10 @@ export class MissionControlComponent {
               'Fly to mars!',
               'Fly to Vegas!'];
   nextMission = 0;
+  subscription: Subscription;
 
   constructor(private missionService: MissionService) {
-    missionService.missionConfirmed$.subscribe(
+    this.subscription = missionService.missionConfirmed$.subscribe(
       astronaut => {
         this.history.push(`${astronaut} confirmed the mission`);
       });
@@ -29,4 +31,7 @@ export class MissionControlComponent {
     if (this.nextMission >= this.missions.length) { this.nextMission = 0; }
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
