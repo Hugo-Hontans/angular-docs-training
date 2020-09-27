@@ -9,6 +9,8 @@ import { HeroParentComponent } from './component-interaction/hero-parent/hero-pa
 import { CountdownTimerComponent } from './component-interaction/countdown-timer/countdown-timer.component';
 import { CountdownParentComponent } from './component-interaction/countdown-parent/countdown-parent.component';
 import { CountdownViewChildParentComponent } from './component-interaction/countdown-view-child-parent/countdown-view-child-parent.component';
+import { MissionControlComponent } from './component-interaction/mission-control/mission-control.component';
+import { AstronautComponent } from './component-interaction/astronaut/astronaut.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CountdownViewChildParentComponent } from './component-interaction/count
     HeroParentComponent,
     CountdownTimerComponent,
     CountdownParentComponent,
-    CountdownViewChildParentComponent
+    CountdownViewChildParentComponent,
+    MissionControlComponent,
+    AstronautComponent
   ],
   imports: [
     BrowserModule,
