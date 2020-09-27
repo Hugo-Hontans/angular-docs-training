@@ -8,6 +8,7 @@ import { HeroChildComponent } from './component-interaction/hero-child/hero-chil
 import { HeroParentComponent } from './component-interaction/hero-parent/hero-parent.component';
 import { CountdownTimerComponent } from './component-interaction/countdown-timer/countdown-timer.component';
 import { CountdownParentComponent } from './component-interaction/countdown-parent/countdown-parent.component';
+import { CountdownViewChildParentComponent } from './component-interaction/countdown-view-child-parent/countdown-view-child-parent.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CountdownParentComponent } from './component-interaction/countdown-pare
     HeroChildComponent,
     HeroParentComponent,
     CountdownTimerComponent,
-    CountdownParentComponent
+    CountdownParentComponent,
+    CountdownViewChildParentComponent
   ],
   imports: [
     BrowserModule,
