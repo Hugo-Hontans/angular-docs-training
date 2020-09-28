@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdItem } from './ad-item';
+import { AdService } from './ad.service';
 
 @Component({
   selector: 'app-dynamic-component',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DynamicComponentComponent implements OnInit {
 
-  constructor() { }
+  ads: AdItem[];
 
-  ngOnInit(): void {
+  constructor(private adService: AdService) {}
+
+  ngOnInit() {
+    this.ads = this.adService.getAds();
   }
 
 }
