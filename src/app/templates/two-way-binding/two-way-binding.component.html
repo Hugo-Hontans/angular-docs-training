@@ -1,0 +1,9 @@
+<h3>Two way 1</h3>
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
+
+<h3>Two way 2</h3>
+<app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
+
+<h3>SVG</h3>
+<app-svg></app-svg>
